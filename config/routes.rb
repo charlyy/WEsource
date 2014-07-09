@@ -1,4 +1,5 @@
 WEsource::Application.routes.draw do
+  get "resources/index"
   get "users/new"
   get "welcome/home"
   get "sessions/welcome"
