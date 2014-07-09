@@ -33,7 +33,7 @@
             <li><a data-reveal-id="signup_modal" >Sign Up</a></li>
           <% end %>
           <% if current_user %>
-            <li>Hello, <%= current_user.first_name %></li>
+            <li><a href="#">Hello <%= current_user.first_name %>!</a></li>
             <li><a data-reveal-id="resource_modal">Create WEsource</a></li>
             <li><%= link_to "Sign Out", session_path(@current_user), :method => :delete %></li>
           <% end %>
