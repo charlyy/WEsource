@@ -1,11 +1,10 @@
 module ApplicationHelper
-def current_user
+	def current_user
     	if session[:remember_token]
     		@current_user ||= User.find(session[:remember_token])
-        puts @current_user
-        return @current_user
+        	puts @current_user
+        	return @current_user
     	else
-
     		false
     	end
   	end

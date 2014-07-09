@@ -1,10 +1,10 @@
-class ResourceController < ApplicationController
+class ResourcesController < ApplicationController
 before_action :set_resource, :only => [:show, :edit, :update, :destroy]
 respond_to :json, :html
 
 	def index
 		@resources = Resource.all
-		respond_with @resources
+		respond_with(@resources)
 	end
 
 	def new
@@ -12,7 +12,7 @@ respond_to :json, :html
 	end
 
 	def show
-		respond_with @resource
+		respond_with(@resource)
 	end
 
 	def create

@@ -1,8 +1,4 @@
 WEsource::Application.routes.draw do
-  get "resources/index"
-  get "users/new"
-  get "welcome/home"
-  get "sessions/welcome"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :sessions, only: [:new, :create, :destroy]
@@ -10,7 +6,7 @@ WEsource::Application.routes.draw do
     resources :resources
   end
   # You can have the root of your site routed with "root"
-   root 'resource#index'
+   root 'resources#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

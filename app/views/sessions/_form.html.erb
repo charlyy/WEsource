@@ -1,0 +1,26 @@
+<div class="small-8  small-offset-3 columns">
+    <%= form_for :session, :url => sessions_path do |f| %>
+        <h1 >Log In</h1>
+
+        <form role="form">
+            <div class="form-group">
+            <%= f.text_field :email, :placeholder => "Email"  %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password, :placeholder => "Password" %>
+            </div>
+            <div class="form-group">
+                <%= f.submit "Login", class: 'button success' %>
+            </div>
+        </form>
+
+        <div class="divider"></div>
+        
+        <div>
+            <%=link_to "Not a member yet?", new_user_path, class: 'button tiny'%>
+        </div>
+    <% end %>
+</div>
+
+
+
