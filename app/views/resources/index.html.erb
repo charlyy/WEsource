@@ -1,0 +1,12 @@
+<div class="resources_index_container row">
+	<div class="resource_container">
+		<% @resources.each do |r| %>
+			<h4><%= r.title %></h4>
+			<p><strong>Language:</strong> <%= r.language %> <br />
+			<a href=<%= r.link %> target="_blank">WEsource</a>
+			</p>
+		<% end %>
+	</div>	
+</div>
+
+
