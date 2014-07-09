@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Thank you for signing up!"
       session[:remember_token] = @user.id
+      redirect_to root_path
     else
       raise @user.errors.inspect	
       render 'new'

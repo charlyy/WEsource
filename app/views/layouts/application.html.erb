@@ -34,8 +34,8 @@
           <% end %>
           <% if current_user %>
             <li>Hello, <%= current_user.first_name %></li>
-            <li><%= link_to "Create WEsource", new_resource_path %></li>
-            <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
+            <li><a data-reveal-id="resource_modal">Create WEsource</a></li>
+            <li><%= link_to "Sign Out", session_path(@current_user), :method => :delete %></li>
           <% end %>
         </ul>
       </li>
@@ -55,7 +55,10 @@
 </div>
 <div id="login_modal" class="reveal-modal" data-reveal>
     <%= render partial: 'sessions/form', :action =>"new" %>
-
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="resource_modal" class="reveal-modal" data-reveal>
+    <%= render partial: 'resources/form', :action =>"new" %>
     <a class="close-reveal-modal">&#215;</a>
 </div>
 

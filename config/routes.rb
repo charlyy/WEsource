@@ -2,9 +2,9 @@ WEsource::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, :only => [:new, :create] do
-    resources :resources
-  end
+  resources :users, :only => [:new, :create]
+  resources :resources
+ 
   # You can have the root of your site routed with "root"
    root 'resources#index'
 
