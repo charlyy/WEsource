@@ -17,18 +17,16 @@ respond_to :json, :html
 
 	def create
 		@resource = Resource.new(resource_params)
-		
 		if @resource.save
-			flash[:success] = "Your WEsource has been created!"
 			respond_to do |format|
-		        format.html { redirect_to resources_path }
-		        format.json { render json: @resource, status: :created }
-		    end
+			format.html { redirect_to resources_path }
+			format.json { render json: @resource, status: :created }
+			end
 	    else
-	      	respond_to do |format|
-		        format.html { render 'new' }
-		        format.json { render json: @resource.errors, status: :unprocessable_entity }
-	        end
+	    	respond_to do |format|
+	      	format.html { render 'new' }
+       		format.json { render json: @resource.errors, status: :unprocessable_entity }
+    		end
 		end
 	end
 
@@ -37,15 +35,15 @@ respond_to :json, :html
 
 	def update
 		if @resource.update(resource_params)
-		      respond_to do |format|
+	      	respond_to do |format|
 		        format.html { redirect_to resources_path }
 		        format.json { render nothing: true, status: :no_content }
-		      end
-		    else
-		      respond_to do |format|
+	      	end
+	    else
+	      	respond_to do |format|
 		        format.html { render 'edit' }
 		        format.json { render json: @resource.errors, status: :unprocessable_entity }
-		      end
+	      	end
 		end
 	end
 
@@ -65,7 +63,7 @@ respond_to :json, :html
 	end
 
 	def resource_params
-		params.require(:resource).permit(:title, :language, :link, :note)
+		params.require(:resource).permit(:user_id, :created_at, :title, :language, :link, :note)
 	end
 
 end

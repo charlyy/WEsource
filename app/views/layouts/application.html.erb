@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -9,61 +9,55 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
-  </head>
-
-  <body>
+</head>
+<body>
     <nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="resources#index">WEsource</a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span><!-- Menu --></span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <!-- <li class="active"><a href="#">Right Button Active</a></li> -->
-      <li class="has-dropdown">
-        <a href="#">WEnu</a>
-        <ul class="dropdown">
-          <% if !current_user %>
-            <li><a data-reveal-id="login_modal" >Login</a></li>
-            <li><a data-reveal-id="signup_modal" >Sign Up</a></li>
-          <% end %>
-          <% if current_user %>
-            <li><a href="#">Hello <%= current_user.first_name %>!</a></li>
-            <li><a data-reveal-id="resource_modal">Create WEsource</a></li>
-            <li><%= link_to "Sign Out", session_path(@current_user), :method => :delete %></li>
-          <% end %>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="resources#index">WEsource</a></h1>
+            </li>
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon">
+                <a href="#"><span><!-- Menu --></span></a>
+            </li>
         </ul>
-      </li>
-    </ul>
-    <!-- Left Nav Section -->
-    <!-- <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul> -->
-  </section>
-</nav>
-
-<!-- Modals -->
-
-<div id="signup_modal" class="reveal-modal" data-reveal>
-    <%= render partial: 'users/form', :action =>"new" %>
-    <a class="close-reveal-modal">&#215;</a>
-</div>
-<div id="login_modal" class="reveal-modal" data-reveal>
-    <%= render partial: 'sessions/form', :action =>"new" %>
-    <a class="close-reveal-modal">&#215;</a>
-</div>
-<div id="resource_modal" class="reveal-modal" data-reveal>
-    <%= render partial: 'resources/form', :action =>"new" %>
-    <a class="close-reveal-modal">&#215;</a>
-</div>
-
-
+        <section class="top-bar-section">
+        <!-- Right Nav Section -->
+            <ul class="right">
+                <!-- <li class="active"><a href="#">Right Button Active</a></li> -->
+                <li class="has-dropdown">
+                    <a href="#">WEnu</a>
+                    <ul class="dropdown">
+                        <% if !current_user %>
+                            <li><a data-reveal-id="login_modal" >Login</a></li>
+                            <li><a data-reveal-id="signup_modal" >Sign Up</a></li>
+                        <% end %>
+                        <% if current_user %>
+                            <li>
+                                <a id="hello_user">Hello <%= current_user.first_name %>!</a>
+                            </li>
+                            <li>
+                                <a data-reveal-id="resource_modal">Create WEsource</a>
+                            </li>
+                            <li>
+                                <%= link_to "Sign Out", session_path(@current_user), :method => :delete %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </li>
+            </ul>
+        <!-- Left Nav Section -->
+        <!-- <ul class="left">
+          <li><a href="#">Left Nav Button</a></li>
+        </ul> -->
+        </section>
+    </nav>
+    <div class="container-fluid">
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+    </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-  </body>
+</body>
 </html>
