@@ -1,28 +1,6 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+WEsource
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+WEsource is a single-page application designed to easily share and locate website resources.
+
+Built with AngularJS, Ruby on Rails, HTML5, CSS3, Javascript, Zurb Foundation.
