@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+body, h1 {
 	font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+	text-align: center;
 }
 /***********   Search Form   ***********/
 
