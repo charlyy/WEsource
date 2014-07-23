@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "WEsource" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Wesource" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,7 +14,7 @@
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a href="resources#index">WEsource</a></h1>
+                <h1><a href="resources#index"><%= image_tag "wesource_logo.png", id: "wesource_logo" %></a></h1>
             </li>
              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon">
@@ -26,7 +26,7 @@
             <ul class="right">
                 <!-- <li class="active"><a href="#">Right Button Active</a></li> -->
                 <li class="has-dropdown">
-                    <a href="#">WEnu</a>
+                    <a href="#"><%= image_tag "wesource_menu2.png", id: "wesource_menu" %></a>
                     <ul class="dropdown">
                         <% if !current_user %>
                             <li><a data-reveal-id="login_modal" >Login</a></li>
