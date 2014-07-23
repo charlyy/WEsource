@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#resource_img {
+#wesource_img {
 	width: 4em;
 	height: 4em;
 }
 
 .search_bar {
-	width: 70%;
+	margin-top: 20px;
 }
 
 #wesource_logo {
@@ -18,4 +18,8 @@
 
 #wesource_menu {
 	height: 3em;
+}
+
+.search_container { 
+	margin-top: 20px;
 }

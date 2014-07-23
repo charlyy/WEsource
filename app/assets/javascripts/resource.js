@@ -28,13 +28,11 @@ resourceApp.controller('ResourceCtrl', ['$scope', 'Resource', function($scope, R
 		$scope.newResource.$save(function(resource){
 			$scope.resources.push(resource)
 			$scope.newResource = new Resource();
-			console.log(resource)
-			console.log("1")
 		});
 	};
 
-	$scope.clearErrors = function() {
-      $scope.errors = null;
-    }
+   $scope.searchWesource = function(resource) {
+    return resource.title.indexOf($scope.search) >= 0 || resource.language.indexOf($scope.search) >= 0 || resource.link.indexOf($scope.search) >= 0;
+	};
 
 }]);

@@ -1,43 +1,43 @@
 <div x-ng-app="resource-app" class="resources_index_container">
 	
 	<div x-ng-controller="ResourceCtrl">
-		<div x-ng-show="errors" class="alert alert-danger alert-dismissable">
+		<!-- <div x-ng-show="errors" class="alert alert-danger alert-dismissable">
 	        <button type="button" class="close" x-ng-click="clearErrors();" aria-hidden="true">&times;</button>
 	      	<ul>
 		        <li x-ng-repeat="(attribute, error) in errors">
 		          {{attribute}} {{error.join(", ")}}
 		        </li>
 	        </ul>
-	    </div>
+	    </div> -->
 	    
-	<div class="form-group">
-        <input x-ng-model="search" type="text" class="form-control search_bar" placeholder="Search Wesource">
+	<div class="form-group small-6 columns search_container">
+        <input x-ng-model="search" type="text" class="form-control search_bar" placeholder="Search For A Wesource">
     </div>
     <div class="wesource_form_container small-6 columns">
-    	<h3>New Wesource</h3>
+    	<h3>Share New Wesource</h3>
 	    <form x-ng-submit="saveResource();" class="form-group">
-	      <input x-ng-model="newResource.title" name="title" class="form-control small-12 columns" placeholder="Title">
-	      <input x-ng-model="newResource.language" name="language" class="form-control small-12 columns" placeholder="Language">
-	      <input x-ng-model="newResource.link" name="link" class="form-control small-12 columns" placeholder="Link">
-	      <input x-ng-model="newResource.note" name="note" class="form-control small-12 columns" placeholder="Notes"> <br />
-	      <input type="submit" value="Add New Wesource!" class="button small">
+	      <input x-ng-model="newResource.title" name="title" class="form-control small-12 columns" placeholder="Title (Required)">
+	      <input x-ng-model="newResource.language" name="language" class="form-control small-12 columns" placeholder="Language (Required)">
+	      <input x-ng-model="newResource.link" name="link" class="form-control small-12 columns" placeholder="Link (Required)">
+	      <input x-ng-model="newResource.note" name="note" class="form-control small-12 columns" placeholder="Notes (Optional)"> <br />
+	      <input type="submit" value="SHARE" class="button tiny small-12 columns">
 	    </form>
     </div>
     	<div class="small-12 columns resource_container ">
     	<h1>Wesources</h1>	
-			<table>
+			<table class="small-12">
 				<tr>
 					<th>Title</th>
 					<th>Language</th>
 					<th>Link</th>
 					<th>Note</th>
 				</tr>
-				<tr x-ng-repeat="resource in resources | filter:search">
+				<tr x-ng-repeat="resource in resources | filter: searchWesource">
 					<td> {{resource.title}} </td>
 				 	<td> {{resource.language}} </td>
 				 	<td> 
 		
-				 	<a href="{{resource.link}}" target="blank"><%= image_tag "wesource_diamond.png", id: "resource_img" %></a> </td>
+				 	<a href="{{resource.link}}" target="blank"><%= image_tag "wesource_diamond.png", id: "wesource_img" %></a> </td>
 				 	<td> {{resource.note}} </td>
 				</tr>
 			</table>	
