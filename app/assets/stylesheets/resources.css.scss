@@ -2,14 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	font-family: 'Josefin Sans', sans-serif;
+}
+/***********   Search Form   ***********/
+
+.search_container { 
+	margin-top: 20px;
+	h3 {
+		font-family: 'Josefin Sans', sans-serif;
+	}
+	.search_bar {
+		margin-top: 20px;
+	}
+}
+
+/***********   New Wesource Section   ***********/
+
+.wesource_form_container {
+	h3 {
+		text-align: center;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+}
+
+/***********   Images   ***********/
 
 #wesource_img {
 	width: 4em;
 	height: 4em;
-}
-
-.search_bar {
-	margin-top: 20px;
 }
 
 #wesource_logo {
@@ -20,6 +41,34 @@
 	height: 3em;
 }
 
-.search_container { 
-	margin-top: 20px;
+/***********   Wesource   ***********/
+	
+.wesource_container {
+	height: 420px;
+	overflow-y: scroll;
+	h1 {
+		text-align: center;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+}
+
+table {
+	tbody {
+		background-color: #4BBDFD;
+
+	}
+}
+
+.table_headers {
+	th {
+		font-size: 1.3em;
+	}
+}
+
+#resource_table {
+	background-color: black;
+}
+
+#link_container {
+	width: 5em;
 }

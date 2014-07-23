@@ -24,6 +24,7 @@ resourceApp.controller('ResourceCtrl', ['$scope', 'Resource', function($scope, R
 		$scope.resources = resources;
 	});
 
+
 	$scope.saveResource = function(){
 		$scope.newResource.$save(function(resource){
 			$scope.resources.push(resource)

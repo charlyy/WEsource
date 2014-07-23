@@ -9,12 +9,16 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <%= favicon_link_tag 'wesource_diamond.png' %>
 </head>
 <body>
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a href="resources#index"><%= image_tag "wesource_logo.png", id: "wesource_logo" %></a></h1>
+                    <%= link_to resources_path do %> 
+                        <%= image_tag "wesource_logo.png", id: "wesource_logo" %> 
+                    <% end %>
             </li>
              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon">
@@ -29,18 +33,15 @@
                     <a href="#"><%= image_tag "wesource_menu2.png", id: "wesource_menu" %></a>
                     <ul class="dropdown">
                         <% if !current_user %>
-                            <li><a data-reveal-id="login_modal" >Login</a></li>
-                            <li><a data-reveal-id="signup_modal" >Sign Up</a></li>
+                            <li><%= link_to "Sign Up", new_user_path, id: "sign_up" %></li>
+                            <li><%= link_to "Sign In", new_session_path, id: "sign_up" %></li>
                         <% end %>
                         <% if current_user %>
                             <li>
                                 <a id="hello_user">Hello <%= current_user.first_name %>!</a>
                             </li>
                             <li>
-                                <a data-reveal-id="resource_modal">Create WEsource</a>
-                            </li>
-                            <li>
-                                <%= link_to "Sign Out", session_path(@current_user), :method => :delete %>
+                                <%= link_to "Sign Out", session_path(current_user), method: 'delete' %>
                             </li>
                         <% end %>
                     </ul>
